@@ -1,0 +1,49 @@
+{
+  "name": "pelias-elasticsearch",
+  "version": "0.0.0-development",
+  "description": "Elasticsearch integration for Pelias",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test node test/run.js | tap-spec",
+    "lint": "jshint .",
+    "validate": "npm ls",
+    "ci": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pelias/pelias-elasticsearch"
+  },
+  "keywords": [
+    "pelias",
+    "elasticsearch",
+    "client"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pelias/pelias-elasticsearch/issues"
+  },
+  "homepage": "https://github.com/pelias/pelias-elasticsearch",
+  "devDependencies": {
+    "intercept-stdout": "^0.1.2",
+    "precommit-hook": "^3.0.0",
+    "proxyquire": "^2.0.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.0.0"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "~7.17.0",
+    "pelias-config": "https://github.com/michaelkirk-pelias/config#mkirk/elastic8",
+    "pelias-logger": "^1.2.1"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
+  "release": {
+    "success": []
+  }
+}
